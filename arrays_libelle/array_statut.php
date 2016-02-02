@@ -1,0 +1,45 @@
+<?php 
+$array_statut=array(); 
+$array_statut_special=array(); 
+
+$array_statut[0]['F']='---'; 
+$array_statut[0]['N']='---'; 
+$array_statut_special[0]['F']='---'; 
+$array_statut_special[0]['N']='---'; 
+$array_statut[1]['F']="A.C.S."; 
+$array_statut[1]['N']=""; 
+$array_statut[17]['F']="A.C.S. - C.D.D."; 
+$array_statut[17]['N']=""; 
+$array_statut[2]['F']="A.C.S. - I.S.P."; 
+$array_statut[2]['N']=""; 
+$array_statut_special[12]['F']="Activa"; 
+$array_statut_special[12]['N']=""; 
+$array_statut_special[13]['F']="Activa start"; 
+$array_statut_special[13]['N']=""; 
+$array_statut[3]['F']="ANTICIPATIF"; 
+$array_statut[3]['N']=""; 
+$array_statut[4]['F']="ARTICLE 60 § 7"; 
+$array_statut[4]['N']=""; 
+$array_statut[5]['F']="C.D.D."; 
+$array_statut[5]['N']=""; 
+$array_statut[18]['F']="C.D.D.-ACS-ISP"; 
+$array_statut[18]['N']=""; 
+$array_statut[6]['F']="C.D.I."; 
+$array_statut[6]['N']=""; 
+$array_statut_special[14]['F']="C.P.E."; 
+$array_statut_special[14]['N']=""; 
+$array_statut[7]['F']="Etudiant(e)"; 
+$array_statut[7]['N']=""; 
+$array_statut_special[15]['F']="Maribel fiscal"; 
+$array_statut_special[15]['N']=""; 
+$array_statut_special[16]['F']="Maribel social"; 
+$array_statut_special[16]['N']=""; 
+$array_statut[8]['F']="NOMME"; 
+$array_statut[8]['N']=""; 
+$array_statut[9]['F']="Pensionné(e)"; 
+$array_statut[9]['N']=""; 
+$array_statut[10]['F']="Remplacement"; 
+$array_statut[10]['N']=""; 
+$array_statut[11]['F']="Stagiaire nommé(e)"; 
+$array_statut[11]['N']=""; 
+?>

@@ -1,0 +1,446 @@
+	
+	div.ui-datepicker{  font-size:10.5px; }
+	div.ui-timepicker{  font-size:10.5px; }
+
+
+	.ui-widget
+	 {font-size:10pt;}
+	.ui-autocomplete-input
+	 {
+		padding:5px;
+	 }
+  
+	.form input[type="search"] 
+	{ 
+	/*background-color: #eee; */
+	background-image: url(images/icon_search.png);
+	background-repeat:no-repeat;
+	/*background-position: 2px 2px 2px 2px;*/ /* position of the right icon */
+	border: 1px solid #ccc; 
+	padding-bottom: 5px; 
+	padding-top: 5px; 
+	padding-left: 22px; 
+	font-family: Keffeesatz, Arial; 
+	color: #4b4b4b; 
+	font-size: 14px; 
+	-webkit-border-radius: 5px; 
+	margin-bottom: 15px; 
+	margin-top:-2px;
+	}
+	
+	#DIV_CLOSE_PANNEL #box_close {
+		
+		/* position absolute so that z-index can be defined and able to move this item using javascript */
+		position:absolute;
+		top:0px;
+		left:0px;
+		z-index:200; 
+
+		/* image of the right rounded corner */
+		background: url(./tail.gif) no-repeat right top; 
+		height:52px;
+		/*border:1px solid red;*/
+
+
+		/* add padding 8px so that the tail would appear */
+		padding-right:8px;
+		
+		/* set the box position manually */
+		margin-left:105px;
+		
+	}
+	
+	#DIV_CLOSE_PANNEL #box_close .head {
+		/* image of the left rounded corner */
+		background:url(./head.gif) no-repeat 0 0;
+		height:30px;
+		color:#eee;
+		/*border:1px solid green;*/
+		/*color:black;*/
+		/* force text display in one line */
+		white-space:nowrap;
+
+		/* set the text position manually */
+		padding-left:8px;
+		padding-top:22px;
+		padding-right:5px;
+	}
+	#primaryNav li {
+		
+		/* give some spaces between the list items */
+		/*margin:0 5px;*/ 
+		
+		/* display the list item in single row */
+		float:left;
+		
+	}
+	
+
+	
+	#primaryNav #box {
+		
+		/* position absolute so that z-index can be defined and able to move this item using javascript */
+		position:absolute; 
+		left:410px; 
+		top:300px; 
+		z-index:200; 
+
+		/* image of the right rounded corner */
+		background: url(../tail.gif) no-repeat right center; 
+		height:191px;
+
+
+		/* add padding 8px so that the tail would appear */
+		padding-right:8px;
+		
+		/* set the box position manually */
+		margin-left:105px;
+		
+	}
+	
+	
+	
+	
+	
+	#primaryNav #box .head {
+		/* image of the left rounded corner */
+		background:url(../head.gif) no-repeat 0 0;
+		height:191px;
+		color:#eee;
+		/*color:black;*/
+		/* force text display in one line */
+		white-space:nowrap;
+
+		/* set the text position manually */
+		padding-left:8px;
+		padding-top:22px;
+	}
+	
+	#primaryNav #box_hors_dep {
+		
+		/* position absolute so that z-index can be defined and able to move this item using javascript */
+		position:absolute; 
+		left:410px; 
+		top:300px; 
+		z-index:200; 
+
+		/* image of the right rounded corner */
+		background: url(../tail.gif) no-repeat right center; 
+		height:191px;
+
+
+		/* add padding 8px so that the tail would appear */
+		padding-right:8px;
+		
+		/* set the box position manually */
+		margin-left:105px;
+	}
+	
+	#primaryNav #box_hors_dep .head {
+		/* image of the left rounded corner */
+		background:url(../head.gif) no-repeat 0 0;
+		height:191px;
+		color:#eee;
+		/*color:black;*/
+		/* force text display in one line */
+		white-space:nowrap;
+
+		/* set the text position manually */
+		padding-left:8px;
+		padding-top:22px;
+	}
+	
+	#primaryNav #box_cel {
+		
+		/* position absolute so that z-index can be defined and able to move this item using javascript */
+		position:absolute; 
+		left:410px; 
+		top:300px; 
+		z-index:200; 
+
+		/* image of the right rounded corner */
+		background: url(../tail.gif) no-repeat right center; 
+		height:191px;
+
+		/* add padding 8px so that the tail would appear */
+		padding-right:8px;
+		
+		/* set the box position manually */
+		margin-left:105px;
+	}
+	
+	#primaryNav #box_cel .head_cel {
+		/* image of the left rounded corner */
+		background:url(../head.gif) no-repeat 0 0;
+		height:191px;
+		color:#eee;
+		/*color:black;*/
+		/* force text display in one line */
+		white-space:nowrap;
+
+		/* set the text position manually */
+		padding-left:8px;
+		padding-top:22px;
+	}
+	
+	.bnt_close
+	{
+		cursor:default;
+		color:#eee;
+		font-weight:bold;
+	}
+	
+	.bnt_close:hover
+	{
+		cursor:default;
+		color:#fff;
+		font-weight:bold;
+		text-decoration:underline;
+	}
+	
+	.liste_agents
+	{
+		/*visibility:hidden;*/
+		display:none;
+		margin-left:142px;
+		padding-left:-50px;
+		margin-top:-100px;
+		background-color:white;
+		border:1px solid #999999;
+		width:250px;
+		height:100px;
+		overflow:auto;
+		scrollbar-face-color: #cdcdcd;
+		scrollbar-shadow-color: #505050;
+		scrollbar-highlight-color: #505050;
+		scrollbar-3dlight-color: #ffffff;
+		scrollbar-darkshadow-color: #ffffff;
+		scrollbar-track-color: #ffffff;
+		scrollbar-arrow-color: #505050;
+	}
+	
+	.lien_agent
+	{
+		cursor:default;
+		text-align:left;
+		padding-left:10px;
+		font-size:1em;
+		font-family:Verdana,Arial;
+		background-color:white;
+	}
+
+	.lien_agent:hover
+	{
+		cursor:default;
+		text-align:left;
+		padding-left:10px;
+		font-size:1em;
+		font-family:Verdana,Arial;
+		color:white;
+		background-color:grey;
+	}
+	
+	.lien_menu
+	{
+		cursor:default;
+		text-align:left;
+		padding-left:10px;
+		font-size:1em;
+		font-family:Verdana,Arial;
+		background-color:white;
+	}
+
+	.lien_menu:hover
+	{
+		cursor:default;
+		text-align:left;
+		padding-left:10px;
+		font-size:1em;
+		font-family:Verdana,Arial;
+		color:white;
+		background-color:grey;
+	}
+	
+	a {
+	cursor:default;
+	color:black;
+	}
+	
+	a:hover {
+	cursor:default;
+	color:white;
+	}
+	
+	#DIV_CLOSE_PANNEL #box_close {
+		
+		/* position absolute so that z-index can be defined and able to move this item using javascript */
+		position:absolute;
+		top:0px;
+		left:0px;
+		z-index:200; 
+
+		/* image of the right rounded corner */
+		background: url(../tail.gif) no-repeat right top; 
+		height:52px;
+		/*border:1px solid red;*/
+
+
+		/* add padding 8px so that the tail would appear */
+		padding-right:8px;
+		
+		/* set the box position manually */
+		margin-left:105px;
+		
+	}
+	
+	#DIV_CLOSE_PANNEL #box_close .head {
+		/* image of the left rounded corner */
+		background:url(../head.gif) no-repeat 0 0;
+		height:30px;
+		color:#eee;
+		/*border:1px solid green;*/
+		/*color:black;*/
+		/* force text display in one line */
+		white-space:nowrap;
+
+		/* set the text position manually */
+		padding-left:8px;
+		padding-top:22px;
+		padding-right:5px;
+	}
+	
+	.td_list_title
+	{
+		cursor:default;
+		border-style:solid;
+		font-size:12pt;
+		border-width:1px;
+		border-color:#fff;
+		
+		height:20px;
+		margin:0px;
+		
+		vertical-align:top;
+		color:#FFF;
+		background: #3d3d3d url('../images/white-highlight.png') top left repeat-x;
+	}
+
+	.td_list
+	{
+		cursor:default;
+		border-style:solid;
+		border-width:1px;
+		border-color:#fff;
+		margin:0px;
+		padding:2px;
+		
+		background: #bbb url('../images/white-highlight.png') top left repeat-x;
+	}
+	.td_list_content
+	{
+		cursor:default;
+		border-style:solid;
+		border-width:1px;
+		border-color:#ccc;
+		margin:10px;
+		padding:12px;
+		background-color: white;
+	}
+	
+	.td_list_content:hover
+	{
+		cursor:default;
+		border-style:solid;
+		border-width:1px;
+		border-color:#ccc;
+		margin:0px;
+		padding:12px;
+		/*background-color:#eee;*/
+		background-color:#F4F4F4;
+		
+	} 
+	
+	.bnt_open_list
+	{
+		cursor:default;
+		width:20px;
+		height:20px;
+		background: url('../images/bnt_open_list.png') top left no-repeat;
+	}
+	
+	.bnt_close_list
+	{
+		cursor:default;
+		width:20px;
+		height:20px;
+		background: url('../images/bnt_close_list.png') top left no-repeat;
+	}
+	
+	.bnt_ajout_mvt
+	{
+		cursor:default;
+		width:20px;
+		height:20px;
+		background: url('../images/bnt_ajout_mvt.png') top left no-repeat;
+	}
+	
+	.div_list_cadres
+	{
+		float:left;
+		height:827px;
+		border-bottom:#ccc 3px solid;
+		background-color:#eee;
+	}
+	.fond_form
+	{
+		/*background-color:#E4F8D2;*/
+		background-color:#ccc;
+		background-position:top left;
+		vertical-align:top;
+		height:830px;
+	}
+	
+	.msg_accueil
+	{
+		font-size:200%;
+		vertical-align:middle;
+		padding-top:200px;
+		padding-right:30px;
+		text-align:center;
+		
+	}
+	
+	form input[type='text']
+	{padding-top:5px;padding-left:5px;padding-bottom:5px;margin:5px;}
+	
+	form select
+	{padding:5px;margin:5px;width:94%;}
+	
+	form input[type='button']
+	{padding:5px;width:25%;background-color:#ddd;border:1px solid #777;border-radius:3px;}
+	
+	input[type='button']
+	{padding:5px;width:25%;background-color:#ddd;border:1px solid #777;border-radius:3px;}
+	
+	form input[type='button']:hover
+	{background-color:#fff;}
+	
+	input[type='button']:hover
+	{background-color:#fff;}
+	
+	form textarea
+	{height:100px;}
+	
+	#FORM_SELECT_DATES input[type='button']
+	{width:60px;}
+	
+	#FORM_TABLEAU_PERSO input[type='button']
+	{width:60px;}
+	
+	#FORM_SELECT_DATES_OUT input[type='button']
+	{width:60px;}
+	
+	/*input[id^='date_debut']
+	,input[id^="date_echeance"]
+	,input[id="start_date"]
+	{background-color:red;width:20%;}*/

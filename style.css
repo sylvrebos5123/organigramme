@@ -1,0 +1,20 @@
+
+	BODY {background:url('images/fond.jpg')}
+	
+	.entite {position:absolute; border:solid 2px #3366FF; width:200px; height:40px; text-align:center; background:#99CCFF; opacity:1; -moz-border-radius:10px; z-index:5; font-size:6pt; font-weight:bold; padding:2px; }
+	.entite:hover {font-size:12pt;border:solid 5px red;}
+		
+	.ligne {position:absolute; background:red; -moz-border-radius:10px;}
+	
+	.ligneI {position:absolute; background:#00F; width:2px;}
+	.ligneP {position:absolute; background:#F00; height:2px;}
+	
+	#modif {position:absolute; top:200px; left:200px; width:400px; height:300px; display:none; background:#7BD971; border:solid 2px #26711E; z-index:10; padding:10px;-moz-border-radius:10px;}
+	#modif TABLE TD {text-align:center;}
+	#coord {position:absolute; bottom:20px; right:50%; width:100px; height:20px; text-align:center; background:none; border:none;}
+	
+	#color_selector {position:absolute;top:10px;right:10px;z-index:20;display:none;background:#D6D6D6; border:solid 2px #000000;-moz-border-radius:5px;padding:8px;}
+	.colorp {width:5px;height:5px;}
+	
+	#dat_maj {background:none; border:none; position:absolute; bottom:10px; left:10px;}
+	
