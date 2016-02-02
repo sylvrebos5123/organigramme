@@ -33,25 +33,6 @@ if(compareDate($date_debut,$date_fin)==0)
 	 exit;
 }
 
-/*if(($start_date!='00-00-0000')&&($start_date!='0000-00-00')&&($start_date!=''))
-{
-	if(dateValid($start_date)==0)
-	{
-		echo "alert('Date de début de contrat invalide! Veuillez recommencer.');";
-		//echo "return false;";
-		exit;
-	}
-}
-
-if(($end_date!='00-00-0000')&&($end_date!='0000-00-00')&&($end_date!=''))
-{
-	if(dateValid($end_date)==0)
-	{
-		echo "alert('Date de fin de contrat invalide! Veuillez recommencer.');";
-		//echo "return false;";
-		exit;
-	}
-}*/
 
 /*******************/
 function fn_ResultToArray($result=null,$id_key_unic=null)
@@ -108,7 +89,6 @@ if(mysqli_num_rows($result)==0)
 }
 
 
-
 $array_nb_contrats=fn_ResultToArray($result,'id_agent');
 
 /***************************************************/
@@ -155,8 +135,6 @@ $nb_records=$nb_records+1;
 $array_contrats=fn_ResultToArray($result,'id_agent');
 
 mysqli_close($lien);
-//var_dump($array_contrats);
-//var_dump($array_nb_contrats);
 
 
 $tab_nb_contrats=array();
@@ -165,7 +143,6 @@ foreach($array_nb_contrats as $key => $value)
 {
 	$tab_nb_contrats[$value['nom'].'-'.$value['prenom']]=$value['nb_contrats'];
 }
-//var_dump($tab_nb_contrats);
 
 /**********************************************************/
 include('../arrays_libelle/array_departement.php');
@@ -213,8 +190,7 @@ for($i=0;$i<count($array_column);$i++)
 }
 
 $num_ligne=1;
-//$tab_new_cel=array();
-//$num_colonne=0;
+
 include('../connect_db.php');
 
 
@@ -226,8 +202,6 @@ foreach($array_contrats as $key => $value)
 	
 	if($tab_nb_contrats[$value['nom'].'-'.$value['prenom']] >= 2)
 	{
-		
-
 		/*****************************************************************************************/
 		$sql="
 		select
@@ -248,13 +222,8 @@ foreach($array_contrats as $key => $value)
 		
 		if(mysqli_num_rows($result)>0)
 		{
-			//echo "Contrat sup : contrat avant '".$value['start_date']."' pour '".$value['nom']."' '".$value['prenom']."'<br><br>";
 			$sheet->setCellValue($array_column[0].$num_ligne,'Contrat supplémentaire');
-		}
-		
-		
-		
-		//$tab_contrats_nom=fn_ResultToArray($result,'id_contrat');
+		}	
 		
 	}
 	else
@@ -280,16 +249,6 @@ foreach($array_contrats as $key => $value)
 	}
 	$sheet->setCellValue($array_column[10].$num_ligne,$array_service[$value['id_ser']]['F']);
 	$sheet->setCellValue($array_column[11].$num_ligne,$array_cellule[$value['id_cel']]['F']);
-	//$tab_new_cel=explode('-',$array_cellule[$value['id_cel']]['F']);
-	//$cel.=$tab_new_cel[1]."\r\n";
-	/* if(($array_cellule[$value['id_cel']]['F']=='')||($array_cellule[$value['id_cel']]['F']==null))
-	{
-		$sheet->setCellValue($array_column[9].$num_ligne,$array_service[$value['id_ser']]['F']);
-	}
-	else
-	{
-		$sheet->setCellValue($array_column[9].$num_ligne,$array_service[$value['id_ser']]['F'].' / '.$array_cellule[$value['id_cel']]['F']);
-	} */
 }
 
 mysqli_close($lien);
@@ -305,26 +264,15 @@ $sheet->getStyle('A1:L'.$nb_records)->getAlignment()
 
 
 
-/* $nom_fichier='personnel_entrant_'.date('YmdHis');
-
-$writer = new PHPExcel_Writer_Excel2007($workbook);
-
-$records = './'.$nom_fichier.'.xlsx';
-
-$writer->save($records); */
-
-//echo 'window.open("php/'.$nom_fichier.'.xlsx","_blank");';
-
-
 /*****************************************************************************************
 *********** Création du fichier dans un répertoire temporaire et copie sur filesrv*********
 *******************************************************************************************/
 
 $file_name = 'personnel_entrant_'.date('Ymd-His').'.xlsx';
-$temp_xls_name = 'E:\\webserver\\test_cpas_ocmw\\www\\organigramme\\temp\\'.$file_name;
+$temp_xls_name = 'F:\\webserver\\testweb\\www\\organigramme\\temp\\'.$file_name;
 // fichier php contenant les chemins d'accès
-include('array_files.php');
-$new_xls_name = $array_files['AGENTS_IN'].$file_name;
+//include('array_files.php');
+//$new_xls_name = $array_files['AGENTS_IN'].$file_name;
 
 $writer = new PHPExcel_Writer_Excel2007($workbook);
 
@@ -336,10 +284,10 @@ $writer->save($records);
 $xlsx_genrate = false;
 if (file_exists($temp_xls_name))
 {
- if (!copy($temp_xls_name, $new_xls_name))
+ /*if (!copy($temp_xls_name, $new_xls_name))
  {
   echo "alert('Erreur de la copie');";
- }
+ }*/
  
  $xlsx_genrate = true;
  

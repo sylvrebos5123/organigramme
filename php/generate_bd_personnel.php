@@ -103,13 +103,11 @@ statut='N';
 $result=mysqli_query($lien, $sql);
 
 
-//mysqli_close($lien);
 
 $tab_contrats=fn_ResultToArray($result,"id_contrat");
 
 /**************************Lecture agents + signalétiques****************************************************/
 
-//include('../connect_db.php');
 
 $result=array();
 
@@ -123,11 +121,6 @@ where registre_id<990000
 order by nom,prenom;";
 //var_dump($sql);
 $result=mysqli_query($lien, $sql);
-
-//$nb_agents=mysqli_num_rows($result);
-
-//En tenant compte de la ligne titre dans Excel
-//$nb_agents=$nb_agents+1;
 
 mysqli_close($lien);
 
@@ -163,8 +156,7 @@ $tab_type_cadre=array();
 $tab_statut_special=array();
 $tab_contractuel_nomme=array();
 $tab_hors_dep=array();
-//$tab_nb_contrats=array();
-//$nb_contrats=0;
+
 
 foreach($tab_contrats as $key => $value)
 {
@@ -252,12 +244,7 @@ foreach($tab_contrats as $key => $value)
 
 /** PHPExcel_IOFactory */
 if(!isset($rootpath)) { $rootpath = addslashes($_SERVER["DOCUMENT_ROOT"]); };
-//include_once($rootpath.'\\PHPExcel_1.8.0_doc\\Classes\\PHPExcel\\IOFactory.php'); //function de connection
-//include '../PHPExcel/IOFactory.php'; // 
 
-
-
-//echo '<hr />';
 include ($rootpath.'\\PHPExcel_1.8.0_doc\\Classes\\PHPExcel.php');
 include($rootpath.'\\PHPExcel_1.8.0_doc\\Classes\\PHPExcel\\Writer\\Excel2007.php');
 
@@ -324,7 +311,6 @@ $styleArrayBorder = array(
 );
 
 $sheet->getStyle('A1:AT'.$nb_agents)->applyFromArray($styleArrayBorder);
-//unset($styleArrayBorder);
 
 // Titres colonnes
 for($i=0;$i<count($array_column);$i++)
@@ -519,13 +505,9 @@ foreach($Row as $key => $value)
 			
 				$sheet->setCellValue($array_column[43].$num_ligne,$art_budgetaire);
 				
-				
 				$sheet->setCellValue($array_column[44].$num_ligne,$date_sortie);
-				
-				
+					
 				$sheet->setCellValue($array_column[45].$num_ligne,$motif_sortie);
-				
-	
 
 }//FIN foreach $Row
 
@@ -544,10 +526,10 @@ $sheet->getStyle('A1:AT'.$nb_agents)->getAlignment()
 *******************************************************************************************/
 
 $file_name = $nom_fichier.'_'.$new_date_effectif.'_'.date('Ymd-His').'.xlsx';
-$temp_xls_name = 'E:\\webserver\\test_cpas_ocmw\\www\\organigramme\\temp\\'.$file_name;
+$temp_xls_name = 'F:\\webserver\\testweb\\www\\organigramme\\temp\\'.$file_name;
 // fichier php contenant les chemins d'accès
-include('array_files.php');
-$new_xls_name = $array_files['DATABASE_PERSO'].$file_name;
+//include('array_files.php');
+//$new_xls_name = $array_files['DATABASE_PERSO'].$file_name;
 
 $writer = new PHPExcel_Writer_Excel2007($workbook);
 
@@ -559,10 +541,10 @@ $writer->save($records);
 $xlsx_genrate = false;
 if (file_exists($temp_xls_name))
 {
- if (!copy($temp_xls_name, $new_xls_name))
+ /*if (!copy($temp_xls_name, $new_xls_name))
  {
   echo "alert('Erreur de la copie');";
- }
+ }*/
  
  $xlsx_genrate = true;
  

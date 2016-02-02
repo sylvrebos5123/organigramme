@@ -2,6 +2,7 @@
 header ('Content-type: text/html; charset=utf-8'); 
 $rootpath = addslashes($_SERVER["DOCUMENT_ROOT"]);
 require_once $rootpath.'\\PHPWord_0.6.2_Beta\\PHPWord.php';
+echo $rootpath.'\\PHPWord_0.6.2_Beta\\PHPWord.php';
 include('params.php');
 include('array_files.php');
 
@@ -83,22 +84,10 @@ and id_cel=0
 and registre_id<990000
 order by nom,prenom;";
 
-//var_dump($sql);
 $result=mysqli_query($lien, $sql);
 
-/* if(mysqli_num_rows($result)==0)
-{
-	echo "alert('Aucun agent');";
-	//echo '<input type="button" value="Ajout d\'un mouvement ultérieur" onclick="DisplayFormMvt(\'regime\',\''.$id_agent.'\');" />';
-
-	//exit;
-} */
-
-//mysqli_close($lien);
-
-
 $tab_agents_dep=fn_ResultToArray($result,'id_contrat'); 
-//var_dump($tab_agents_dep);
+
 /*************************************************/
 
 
@@ -119,9 +108,7 @@ $result=mysqli_query($lien, $sql);
 if(mysqli_num_rows($result)==0)
 {
 	echo "alert('Aucun service');";
-	//echo "Aucun service<br><br>";
-	//echo '<input type="button" value="Ajout d\'un mouvement ultérieur" onclick="DisplayFormMvt(\'regime\',\''.$id_agent.'\');" />';
-
+	
 	exit;
 }
 
@@ -160,10 +147,7 @@ $PHPWord->addParagraphStyle('pStyle', $paragraphStyle);
 
 $PHPWord->addFontStyle('rStyle', array('bold'=>true, 'size'=>12));
 $PHPWord->addParagraphStyle('pStyle', array('align'=>'center', 'spaceAfter'=>100));
-//$section->addText('I am styled by two style definitions.', 'rStyle', 'pStyle');
-//$section->addText('I have only a paragraph style definition.', null, 'pStyle');
 
-//$section->addText('I am styled by two style definitions.', 'rStyle', 'pStyle');
 $section -> addText(html_entity_decode(iconv('UTF-8', 'windows-1252','Personnel '.$array_departement[$id_dep]['F'])).' - Situation au '.$date_situation_effectifs,'rStyle','pStyle');
 
 
@@ -177,7 +161,6 @@ foreach($tab_agents_dep as $key_agents_dep =>$value_agents_dep)
 	
 	$table->addRow();
 	$table->addCell(2000)->addText(html_entity_decode(iconv('UTF-8', 'windows-1252',$value_agents_dep['nom']." ".$value_agents_dep['prenom'])));
-	//$table->addCell(2000)->addText(html_entity_decode(iconv('UTF-8', 'windows-1252',$array_regime[$value_agents_dep['id_regime']]['F'].' '.$value_agents_dep['date_echeance_regime'])));
 	
 	if(($value_agents_dep['date_echeance_regime']=='0000-00-00')||($value_agents_dep['date_echeance_regime']=='00-00-0000'))
 	{
@@ -236,17 +219,9 @@ Lecture des agents faisant partie d'un service (et pas d'une cellule)
 	order by nom,prenom;";
 	
 	
-	//var_dump($sql);
-	//echo "<br><br>";
 	$result=mysqli_query($lien, $sql);
 
-	/* if(mysqli_num_rows($result)==0)
-	{
-		echo "alert('Aucun agent');";
-		//echo '<input type="button" value="Ajout d\'un mouvement ultérieur" onclick="DisplayFormMvt(\'regime\',\''.$id_agent.'\');" />';
-
-		//exit;
-	} */
+	
 	if(mysqli_num_rows($result)>0)
 	{
 		$tab_agents_ser=fn_ResultToArray($result,'id_contrat');
@@ -257,7 +232,6 @@ Lecture des agents faisant partie d'un service (et pas d'une cellule)
 				$i++;
 				$table->addRow();
 				$table->addCell(2000)->addText(html_entity_decode(iconv('UTF-8', 'windows-1252',$i.' - '.$value_agents_ser['nom']." ".$value_agents_ser['prenom'])));
-				//$table->addCell(2000)->addText(html_entity_decode(iconv('UTF-8', 'windows-1252',$array_regime[$value_agents_ser['id_regime']]['F'].' '.$value_agents_ser['date_echeance_regime'])));
 				
 				if(($value_agents_ser['date_echeance_regime']=='0000-00-00')||($value_agents_ser['date_echeance_regime']=='00-00-0000'))
 				{
@@ -299,11 +273,7 @@ Lecture des agents faisant partie d'un service (et pas d'une cellule)
 		//var_dump($sql);
 		$result=mysqli_query($lien, $sql);
 
-		/* if(mysqli_num_rows($result)==0)
-		{
-			echo "alert('Aucune cellule');";
-
-		} */
+		
 		if(mysqli_num_rows($result)>0)
 		{
 		
@@ -315,8 +285,7 @@ Si une cellule existe, lire le titre de la cellule + les agents contenus à l'in
 		
 			foreach($tab_cellules as $key3 =>$value3) 
 			{
-				//if($value['id_cel']==$value3['id_cel'])
-				//{
+				
 					$styleCell = array('valign'=>'center','bgColor'=>'cccccc');
 			
 					$PHPWord->addTableStyle('myOwnTableStyle', $styleTable, $styleFirstRow);
@@ -326,9 +295,6 @@ Si une cellule existe, lire le titre de la cellule + les agents contenus à l'in
 					//$table->setMTitle($title);
 					$table->addCell(5000,$styleCell)->addText(html_entity_decode(iconv('UTF-8', 'windows-1252',$array_cellule[$value3['id_cel']]['F'])),$fontStyle);
 
-				//}
-				
-				//include('../connect_db.php');
 
 				$sql="select 
 				*
@@ -342,13 +308,7 @@ Si une cellule existe, lire le titre de la cellule + les agents contenus à l'in
 				//var_dump($sql);
 				$result=mysqli_query($lien, $sql);
 
-				/* if(mysqli_num_rows($result)==0)
-				{
-					echo "alert('Aucun agent');";
-					//echo '<input type="button" value="Ajout d\'un mouvement ultérieur" onclick="DisplayFormMvt(\'regime\',\''.$id_agent.'\');" />';
-
-					//exit;
-				} */
+				
 				if(mysqli_num_rows($result)>0)
 				{
 					$tab_agents_cel=fn_ResultToArray($result,'id_contrat');
@@ -357,12 +317,10 @@ Si une cellule existe, lire le titre de la cellule + les agents contenus à l'in
 					foreach($tab_agents_cel as $key_agents_cel =>$value_agents_cel) 
 					{
 						
-						//if($value['id_ser']==$value2['id_ser'])
-						//{
+						
 							$i++;
 							$table->addRow();
 							$table->addCell(2000)->addText(html_entity_decode(iconv('UTF-8', 'windows-1252',$i.' - '.$value_agents_cel['nom']." ".$value_agents_cel['prenom'])));
-							//$table->addCell(2000)->addText(html_entity_decode(iconv('UTF-8', 'windows-1252',$array_regime[$value_agents_cel['id_regime']]['F'].' '.$value_agents_cel['date_echeance_regime'])));
 							
 							if(($value_agents_cel['date_echeance_regime']=='0000-00-00')||($value_agents_cel['date_echeance_regime']=='00-00-0000'))
 							{
@@ -389,30 +347,15 @@ Si une cellule existe, lire le titre de la cellule + les agents contenus à l'in
 					}// FIN FOREACH TAB_AGENTS_CEL
 				}
 				$i=0;
-				//mysqli_close($lien);
 
-
-				
 			}// FIN FOREACH TAB_CEL
-		
 		
 		}
 
 		mysqli_close($lien);
 
-	
-	
  }//FIN FOREACH TAB_SERVICES
 
-
-
-
-// Save File
-//$PHPWord=html_entity_decode(iconv('UTF-8', 'windows-1252',$PHPWord));
- /* $objWriter = PHPWord_IOFactory::createWriter($PHPWord, 'Word2007');
-$nom_fichier='tableau_personnel_'.$id_dep.'_'.$new_date_effectif.'_'.date('His').'.docx';
-
-$objWriter->save($nom_fichier);  */
 
 
 /*****************************************************************************************
@@ -420,11 +363,11 @@ $objWriter->save($nom_fichier);  */
 *******************************************************************************************/
 
 $file_name = 'tableau_personnel_'.$id_dep.'_'.$new_date_effectif.'_'.date('Ymd-His').'.docx';
-$temp_xls_name = 'E:\\webserver\\test_cpas_ocmw\\www\\organigramme\\temp\\'.$file_name;
+$temp_xls_name = 'F:\\webserver\\testweb\\www\\organigramme\\temp\\'.$file_name;
 // fichier php contenant les chemins d'accès
-include('array_files.php');
+/*include('array_files.php');
 $new_xls_name = $array_files['TABLEAU_PERSO'].$file_name;
-
+*/
 $objWriter = PHPWord_IOFactory::createWriter($PHPWord, 'Word2007');
 
 $records = $temp_xls_name;
@@ -435,10 +378,10 @@ $objWriter->save($records);
 $xlsx_genrate = false;
 if (file_exists($temp_xls_name))
 {
- if (!copy($temp_xls_name, $new_xls_name))
+ /*if (!copy($temp_xls_name, $new_xls_name))
  {
   echo "alert('Erreur de la copie');";
- }
+ }*/
  
  $xlsx_genrate = true;
  
@@ -451,8 +394,6 @@ if ($xlsx_genrate == true)
 {
  echo 'window.open("/organigramme/temp/'.$file_name.'","_blank");';
 } 
-
-//echo 'window.open("php/'.$nom_fichier.'","_blank","menubar=no, status=no, scrollbars=no, menubar=no, width=200, height=100");';
 
 
 /*******Connexion database***************/
