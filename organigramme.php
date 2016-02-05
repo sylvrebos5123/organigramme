@@ -655,7 +655,7 @@ function ReloadFormAgent(id_agent,nom_champ,valeur_champ)
 	MyObjet.innerHTML = HttpResponse;
 	
 }
-
+/********Permet d'afficher la liste des primes de l'agent en cours dans l'onglet primes/ancienneté**************************************/
 function DisplayListPrimes(id_agent)
 {
 	//liste des primes
@@ -666,76 +666,8 @@ function DisplayListPrimes(id_agent)
 	MyObjet.innerHTML = HttpResponse;
 }
 
-/*
 
-function DisplayListDep(lg,modif_user)
-{
-	var MyObjet = document.getElementById("DIV_LIST_DEP");
-	var HttpResponse = myHttpRequest('php/liste_departements.php?lg='+lg+'&modif_user='+modif_user+'&url=gestion_drh/profil_departement_drh.php&lg=F&modif_user=vrebos.sylvie&css=profil_departement_drh.css&');
-	MyObjet.innerHTML = HttpResponse;
-}
-
-function LoadDepartements()
-{
-	Apparait("page_modal");
-
-	var MyObjet = document.getElementById("NEW");
-	MyObjet.style.height='510px';
-	var HttpResponse = myHttpRequest('gestion_drh/gestion_departements.php?');
-	
-	MyObjet.innerHTML = HttpResponse;
-	
-	DisplayListDep('F','vrebos.sylvie');
-	Apparait('modal_externe');
-	MoveFromLeft('modal_externe',0,100);
-}
-
-function DisplayListHorsDep(lg,modif_user)
-{
-	var MyObjet = document.getElementById("DIV_LIST_HORS_DEP");
-	var HttpResponse = myHttpRequest('php/liste_hors_departements.php?lg='+lg+'&modif_user='+modif_user+'&url=gestion_drh/profil_hors_departement_drh.php&lg=F&modif_user=vrebos.sylvie&css=profil_hors_departement_drh.css&');
-	MyObjet.innerHTML = HttpResponse;
-}
-
-function LoadHorsDepartements()
-{
-	Apparait("page_modal");
-
-	var MyObjet = document.getElementById("NEW");
-	MyObjet.style.height='510px';
-	var HttpResponse = myHttpRequest('gestion_drh/gestion_hors_departements.php?');
-	
-	MyObjet.innerHTML = HttpResponse;
-	
-	DisplayListHorsDep('F','vrebos.sylvie');
-	Apparait('modal_externe');
-	MoveFromLeft('modal_externe',0,100);
-}
-
-
-function DisplayListSer(lg,modif_user)
-{
-	var MyObjet = document.getElementById("DIV_LIST_SER");
-	var HttpResponse = myHttpRequest('php/liste_services.php?lg='+lg+'&modif_user='+modif_user+'&url=gestion_drh/profil_service_drh.php&lg='+lg+'&modif_user='+modif_user+'&css=profil_service_drh.css&');
-	MyObjet.innerHTML = HttpResponse;
-}
-
-
-
-function LoadServices()
-{
-	Apparait("page_modal");
-	
-	var MyObjet = document.getElementById("NEW");
-	MyObjet.style.height='510px';
-	var HttpResponse = myHttpRequest('gestion_drh/gestion_services.php?');
-	
-	MyObjet.innerHTML = HttpResponse;
-	
-}
-
-*/
-
+/***********changement d'état de l'onglet lors du click************************/
 function change_onglet(name,other1,other2,other3,other4)
 {	
 	document.getElementById('onglet_'+name).className = 'onglet_1 onglet';
@@ -770,7 +702,7 @@ function Corriger(idForm)
 	document.getElementById('bnt_reset').style.visibility="visible";
 }
 
-
+/********Champ supplémentaire pour encoder un autre type de fonction dans les mvt de fonction**************/
 function ApparaitreAutreFonction(idForm,input_fonction)
 {
 	var MyForm=document.getElementById(idForm);
@@ -996,6 +928,7 @@ function DisplayFormContratModif(id_contrat,id_agent)
 	
 }
 
+/*******Formulaire d'initialisation du contrat de l'agent (infos générales)**************************************************/
 function DisplayFormContrat(id_contrat,id_agent)
 {
 	var MyObjet = document.getElementById("FORM_CONTRAT");
@@ -1030,6 +963,7 @@ function DisplayFormContrat(id_contrat,id_agent)
 	
 }
 
+/*******Permet d'afficher les services/cellules contenu dans un département sélectionné***************************************************/
 function FiltreSerCel(id_input,value_input,id_form)
 {
 	var MyForm = document.getElementById(id_form);
@@ -1058,6 +992,7 @@ function FiltreSerCel(id_input,value_input,id_form)
 	}
 }
 
+/********Permet de choisir entre département ou hors département au niveau du formulaire de mvt de service***************************************/
 function DisplayChoixDep(id_form,type_dep)
 {
 	var MyForm=document.getElementById(id_form);
@@ -1099,7 +1034,7 @@ function DisplayOrganigramme()
 		
 }
 
-/******************************************************************/
+/***************Permet d'afficher la bulle grise au niveau de l'organigramme hiérarchique avec le responsable + le personnel***************************************************/
 function DisplayResponsable(nom_champ,valeur_champ)
 {
 	var HttpResponse ='';
@@ -1258,7 +1193,7 @@ function DisplayFormMvt(id_div,type_form,id_mvt,id_agent,id_contrat)
 	
 }
 
-/**********Affichage du formulaire d'jout/modification d'une prime/allocation***********************************************************/
+/**********Affichage du formulaire d'ajout/modification d'une prime/allocation***********************************************************/
 function DisplayFormPrime(id_prime,id_agent,id_type_prime)
 {
 	var MyObjet = document.getElementById('DIV_FORM_PRIME');
@@ -1271,13 +1206,11 @@ function DisplayFormPrime(id_prime,id_agent,id_type_prime)
 	{
 		document.getElementById('div_input_grade').style.display="block";
 		document.getElementById('div_alloc_fonc_sup').style.display="block";
-		//document.getElementById('div_prime_comp').style.display="none";
 	}
 	else
 	{
 		if(id_type_prime==6) // prime compensatoire 
 		{
-			//document.getElementById('div_prime_comp').style.display="block";
 			document.getElementById('div_input_grade').style.display="none";
 			document.getElementById('div_alloc_fonc_sup').style.display="block";
 		}
@@ -1285,7 +1218,6 @@ function DisplayFormPrime(id_prime,id_agent,id_type_prime)
 		{
 			document.getElementById('div_input_grade').style.display="none";
 			document.getElementById('div_alloc_fonc_sup').style.display="none";
-			//document.getElementById('div_prime_comp').style.display="none";
 		}
 	
 	}
@@ -1297,12 +1229,12 @@ function DisplayFormPrime(id_prime,id_agent,id_type_prime)
 	
 	$( "#date_octroi" ).datepicker({ yearRange:year_min+':'+year_max});
 	$( "#date_cloture" ).datepicker({ yearRange:year_min+':'+year_max});
-	//$( "#echeance_prime_compensatoire" ).datepicker({ defaultDate:'0',yearRange:year_min+':'+year_max});
 	$( "#date_echeance_biennale" ).datepicker({ defaultDate:'0',yearRange:year_min+':'+year_max});
 	$( "#date_echeance_code" ).datepicker({ defaultDate:'0',yearRange:year_min+':'+year_max});
 	
 }
 
+/******Permet d'afficher ou de cacher certains champs du formulaire selon le type de prime sélectionné*/
 function DisplayOptionsPrime(id_type_prime)
 {
 	var myForm=document.getElementById('FORM_PRIME');
@@ -1312,13 +1244,11 @@ function DisplayOptionsPrime(id_type_prime)
 	{
 		document.getElementById('div_input_grade').style.display="block";
 		document.getElementById('div_alloc_fonc_sup').style.display="block";
-		//document.getElementById('div_prime_comp').style.display="none";
 	}
 	else
 	{
 		if(value_prime==6)// prime compensatoire 
 		{
-			//document.getElementById('div_prime_comp').style.display="block";
 			document.getElementById('div_input_grade').style.display="none";
 			document.getElementById('div_alloc_fonc_sup').style.display="block";
 		}
@@ -1326,7 +1256,6 @@ function DisplayOptionsPrime(id_type_prime)
 		{
 			document.getElementById('div_input_grade').style.display="none";
 			document.getElementById('div_alloc_fonc_sup').style.display="none";
-			//document.getElementById('div_prime_comp').style.display="none";
 		}
 	
 	}
@@ -1556,10 +1485,7 @@ $(
 			});
 				
 			
-			
-    
-			   
-			   
+	   
 /*********************DATEPICKER*******************/
                        $.datepicker
                        .setDefaults
@@ -1605,9 +1531,7 @@ $list_month = '';
                                }
                        );
                
-			   
-
-                       
+	            
 					$.timepicker
 					.setDefaults({
 					  timeSeparator: ':',
@@ -1628,8 +1552,6 @@ $list_month = '';
 				
 			   }//FIN FUNCTION
         )// FIN DOCUMENT
-
-		
 
 		
 </script>	
