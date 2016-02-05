@@ -1,11 +1,7 @@
 <?php
-//ob_clean();
-
-
 
 $disabled="";
 $disabled_id_registre="";
-//echo $id_agent.'<br>';
 
 if($id_agent==0)
 {
@@ -26,7 +22,6 @@ else
 
 
 <form id="FORM_INFO_GN" name="FORM_INFO_GN" action="<?php echo $lien;?>" method="post" onchange="SetColorButton(this.id);" onkeyup="SetColorButton(this.id);">
-<!--<span onclick="Corriger('FORM_INFO_GN');">Corriger</span><br>-->
 	<table cellspacing="3" cellpadding="3">
 		<tr>
 		<td colspan="2"><h1>Informations générales</h1><br></td>
@@ -50,7 +45,6 @@ else
 				
 				foreach($array_civilite as $key => $value)
 				{
-					//$new_key=str_replace('"', '', $key);
 					
 					if($id_civilite==$key)
 					{
