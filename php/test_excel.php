@@ -222,8 +222,8 @@ if(!isset($rootpath)) { $rootpath = addslashes($_SERVER["DOCUMENT_ROOT"]); };
 
 
 echo '<hr />';
-include ($rootpath.'\\PHPExcel_1.8.0_doc\\Classes\\PHPExcel.php');
-include($rootpath.'\\PHPExcel_1.8.0_doc\\Classes\\PHPExcel\\Writer\\Excel2007.php');
+include ($rootpath.'\\organigramme\\PHPExcel_1.8.0_doc\\Classes\\PHPExcel.php');
+include($rootpath.'\\organigramme\\PHPExcel_1.8.0_doc\\Classes\\PHPExcel\\Writer\\Excel2007.php');
 
 // LETTRE COLONNE  ****** TITRE COLONNE CORRESPONDANTE  *****/    
 $array_column=array(); $array_title=array();
@@ -309,11 +309,7 @@ foreach($Row as $key => $value)
 	$sheet->setCellValue($array_column[2].$num_ligne,$value['registre_id']);
 	$sheet->setCellValue($array_column[3].$num_ligne,$value['langue']);
 	$sheet->setCellValue($array_column[4].$num_ligne,$value['niss']);
-	/* $sheet->getStyle('D3')->getAlignment()
-->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER); */
 	
-	//if(array_key_exists($value['id_agent'],$tab_dep))
-	//{
 		$dep='';
 		$ser='';
 		$cel='';
@@ -339,7 +335,6 @@ foreach($Row as $key => $value)
 		{
 				$dep.=$tab_dep[$value['id_agent']][$key2]."\r\n";
 				$ser.=$tab_ser[$value['id_agent']][$key2]."\r\n";
-				//$tab_new_cel=explode('-',$tab_cel[$value['id_agent']][$key2]);
 				$cel.=$tab_cel[$value['id_agent']][$key2]."\r\n";
 				$ouvrier_employe.=$tab_OE[$value['id_agent']][$key2]."\r\n";
 				$grade.=$tab_grade[$value['id_agent']][$key2]."\r\n";
@@ -358,7 +353,7 @@ foreach($Row as $key => $value)
 				$motif_sortie.=$tab_motif_sortie[$value['id_agent']][$key2]."\r\n";
 				$art_budgetaire.=$tab_art_budgetaire[$value['id_agent']][$key2]."\r\n";
 		}
-			//echo "DEP".$dep;
+			
 				$sheet->setCellValue($array_column[5].$num_ligne,$dep);
 				//$sheet->getStyle($array_column[5].$num_ligne)->getAlignment()->setWrapText(true);
 				

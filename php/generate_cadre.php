@@ -11,8 +11,8 @@ td{text-align:center;padding:5px;}
 </style>';
 
 /*****************************************/
-include ($rootpath.'\\PHPExcel_1.8.0_doc\\Classes\\PHPExcel.php');
-include($rootpath.'\\PHPExcel_1.8.0_doc\\Classes\\PHPExcel\\Writer\\Excel2007.php');
+include ($rootpath.'\\organigramme\\PHPExcel_1.8.0_doc\\Classes\\PHPExcel.php');
+include($rootpath.'\\organigramme\\PHPExcel_1.8.0_doc\\Classes\\PHPExcel\\Writer\\Excel2007.php');
 
 // LETTRE COLONNE  ****** TITRE COLONNE CORRESPONDANTE  *****/    
 $array_column=array(); $array_title=array();
@@ -226,7 +226,8 @@ $writer->save($records);
 *******************************************************************************************/
 echo '<javascript>';
 $file_name = 'cadre_'.$date_cadre.'_'.date('Ymd-His').'.xlsx';
-$temp_xls_name = 'E:\\webserver\\test_cpas_ocmw\\www\\organigramme\\temp\\'.$file_name;
+//$temp_xls_name = 'E:\\webserver\\test_cpas_ocmw\\www\\organigramme\\temp\\'.$file_name;
+$temp_xls_name = 'F:\\webserver\\testweb\\www\\organigramme\\temp\\'.$file_name;
 // fichier php contenant les chemins d'accès
 include('array_files.php');
 $new_xls_name = $array_files['CADRE'].$file_name;

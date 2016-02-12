@@ -2,7 +2,7 @@
 
 //header('Content-Type: text/html; charset=utf-8');
 $rootpath = addslashes($_SERVER["DOCUMENT_ROOT"]);
-include($rootpath.'\\includes\\php_linguistique.php');
+include($rootpath.'\\organigramme\\includes\\php_linguistique.php');
 
 
 if (isset($_GET['id_agent']))

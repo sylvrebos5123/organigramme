@@ -1,7 +1,7 @@
 <?php
 header ('Content-type: text/html; charset=utf-8'); 
 $rootpath = addslashes($_SERVER["DOCUMENT_ROOT"]);
-require_once $rootpath.'\\PHPWord_0.6.2_Beta\\PHPWord.php';
+require_once $rootpath.'\\organigramme\\PHPWord_0.6.2_Beta\\PHPWord.php';
 include('params.php');
 include('array_files.php');
 
@@ -744,7 +744,8 @@ $objWriter->save($nom_fichier); */
 *******************************************************************************************/
 
 $file_name = 'tableau_personnel_ALL_DEP_'.$new_date_effectif.'_'.date('Ymd-His').'.docx';
-$temp_xls_name = 'E:\\webserver\\test_cpas_ocmw\\www\\organigramme\\temp\\'.$file_name;
+//$temp_xls_name = 'E:\\webserver\\test_cpas_ocmw\\www\\organigramme\\temp\\'.$file_name;
+$temp_xls_name = 'F:\\webserver\\testweb\\www\\organigramme\\temp\\'.$file_name;
 // fichier php contenant les chemins d'accès
 include('array_files.php');
 $new_xls_name = $array_files['TABLEAU_PERSO'].$file_name;

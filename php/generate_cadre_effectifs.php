@@ -3,8 +3,8 @@ ob_clean();
 header('Content-Type: text/html; charset=utf-8');
 $rootpath = addslashes($_SERVER["DOCUMENT_ROOT"]);
 
-include ($rootpath.'\\PHPExcel_1.8.0_doc\\Classes\\PHPExcel.php');
-include($rootpath.'\\PHPExcel_1.8.0_doc\\Classes\\PHPExcel\\Writer\\Excel2007.php');
+include ($rootpath.'\\organigramme\\PHPExcel_1.8.0_doc\\Classes\\PHPExcel.php');
+include($rootpath.'\\organigramme\\PHPExcel_1.8.0_doc\\Classes\\PHPExcel\\Writer\\Excel2007.php');
 /*************/
 
 include('verification.php');
@@ -309,7 +309,8 @@ echo 'window.open("'.$name_file.'","_blank");'; */
 *******************************************************************************************/
 //echo '<javascript>';
 $file_name = 'cadre_effectifs_'.$date_cadre.'_'.date('Ymd-His').'.xlsx';
-$temp_xls_name = 'E:\\webserver\\test_cpas_ocmw\\www\\organigramme\\temp\\'.$file_name;
+//$temp_xls_name = 'E:\\webserver\\test_cpas_ocmw\\www\\organigramme\\temp\\'.$file_name;
+$temp_xls_name = 'F:\\webserver\\testweb\\www\\organigramme\\temp\\'.$file_name;
 // fichier php contenant les chemins d'accès
 include('array_files.php');
 $new_xls_name = $array_files['CADRE_EFFECTIFS'].$file_name;

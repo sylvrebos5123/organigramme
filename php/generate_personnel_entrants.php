@@ -4,8 +4,8 @@ ob_clean();
 header ('Content-type: text/html; charset=utf-8'); 
 if(!isset($rootpath)) { $rootpath = addslashes($_SERVER["DOCUMENT_ROOT"]); };
 
-include ($rootpath.'\\PHPExcel_1.8.0_doc\\Classes\\PHPExcel.php');
-include($rootpath.'\\PHPExcel_1.8.0_doc\\Classes\\PHPExcel\\Writer\\Excel2007.php');
+include ($rootpath.'\\organigramme\\PHPExcel_1.8.0_doc\\Classes\\PHPExcel.php');
+include($rootpath.'\\organigramme\\PHPExcel_1.8.0_doc\\Classes\\PHPExcel\\Writer\\Excel2007.php');
 
 echo "<javascript>";
 

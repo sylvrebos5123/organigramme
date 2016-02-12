@@ -1,7 +1,7 @@
 <?php
 //echo 'coucou';
 $rootpath = addslashes($_SERVER["DOCUMENT_ROOT"]);
-include($rootpath.'\\includes\\php_linguistique.php');
+include($rootpath.'\\organigramme\\includes\\php_linguistique.php');
 
 
 /*******params**********************/

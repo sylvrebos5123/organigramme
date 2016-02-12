@@ -1,7 +1,7 @@
 <?php
 header ('Content-type: text/html; charset=utf-8'); 
 $rootpath = addslashes($_SERVER["DOCUMENT_ROOT"]);
-require_once $rootpath.'\\PHPWord_0.6.2_Beta\\PHPWord.php';
+require_once $rootpath.'\\organigramme\\PHPWord_0.6.2_Beta\\PHPWord.php';
 include('params.php');
 
 
