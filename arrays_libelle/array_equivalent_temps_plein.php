@@ -22,6 +22,7 @@ $array_equivalent_temps_plein[30]="0.30";
 $array_equivalent_temps_plein[8]="0.75"; 
 $array_equivalent_temps_plein[35]="0.60"; 
 $array_equivalent_temps_plein[9]="0.60"; 
+$array_equivalent_temps_plein[46]="0.93"; 
 $array_equivalent_temps_plein[10]="0.40"; 
 $array_equivalent_temps_plein[6]="0.10"; 
 $array_equivalent_temps_plein[11]="0.80"; 
