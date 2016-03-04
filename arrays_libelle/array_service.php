@@ -231,4 +231,6 @@ $array_service[114]['F']="US CAR s.p.r.l.";
 $array_service[114]['N']="US CAR s.p.r.l."; 
 $array_service[115]['F']="Personnes de confiance"; 
 $array_service[115]['N']="Vertrouwenpersonen"; 
+$array_service[116]['F']="Eco Culture a.s.b.l."; 
+$array_service[116]['N']="Eco Culture a.s.b.l."; 
 ?>
