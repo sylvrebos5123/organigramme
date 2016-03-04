@@ -49,8 +49,6 @@ function fn_ResultToArray($result=null,$id_key_unic=null)
 	return $tableau;
 }
 
-
-
 include('../arrays_libelle/array_article_budgetaire.php');
 include('../arrays_libelle/array_departement.php');
 include('../arrays_libelle/array_hors_departement.php');
@@ -80,7 +78,6 @@ $new_date_effectif=str_replace('-', '', $date_effectif);
 include('creation_table_effectifs.php');
 
 
-
 /***************Lecture des contrats****************************************/
 include('../connect_db.php');
 
@@ -101,7 +98,6 @@ statut='N';
 ";
 
 $result=mysqli_query($lien, $sql);
-
 
 
 $tab_contrats=fn_ResultToArray($result,"id_contrat");
@@ -366,7 +362,7 @@ foreach($Row as $key => $value)
 		$contractuel_nomme='';
 		$hors_dep='';
 		
-		//$tab_new_cel=array();
+		
 		foreach($tab_dep[$value['id_agent']] as $key2 => $value2)
 		{
 				$dep.=$tab_dep[$value['id_agent']][$key2]."\r\n";
@@ -528,8 +524,6 @@ $sheet->getStyle('A1:AT'.$nb_agents)->getAlignment()
 $file_name = $nom_fichier.'_'.$new_date_effectif.'_'.date('Ymd-His').'.xlsx';
 $temp_xls_name = 'F:\\webserver\\testweb\\www\\organigramme\\temp\\'.$file_name;
 // fichier php contenant les chemins d'accès
-//include('array_files.php');
-//$new_xls_name = $array_files['DATABASE_PERSO'].$file_name;
 
 $writer = new PHPExcel_Writer_Excel2007($workbook);
 
@@ -541,10 +535,6 @@ $writer->save($records);
 $xlsx_genrate = false;
 if (file_exists($temp_xls_name))
 {
- /*if (!copy($temp_xls_name, $new_xls_name))
- {
-  echo "alert('Erreur de la copie');";
- }*/
  
  $xlsx_genrate = true;
  

@@ -365,9 +365,7 @@ Si une cellule existe, lire le titre de la cellule + les agents contenus à l'in
 $file_name = 'tableau_personnel_'.$id_dep.'_'.$new_date_effectif.'_'.date('Ymd-His').'.docx';
 $temp_xls_name = 'F:\\webserver\\testweb\\www\\organigramme\\temp\\'.$file_name;
 // fichier php contenant les chemins d'accès
-/*include('array_files.php');
-$new_xls_name = $array_files['TABLEAU_PERSO'].$file_name;
-*/
+
 $objWriter = PHPWord_IOFactory::createWriter($PHPWord, 'Word2007');
 
 $records = $temp_xls_name;
@@ -378,10 +376,6 @@ $objWriter->save($records);
 $xlsx_genrate = false;
 if (file_exists($temp_xls_name))
 {
- /*if (!copy($temp_xls_name, $new_xls_name))
- {
-  echo "alert('Erreur de la copie');";
- }*/
  
  $xlsx_genrate = true;
  
